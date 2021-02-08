@@ -26,7 +26,7 @@ public class RestaurantAnalyzerController {
     private EmotionExtractorComponent emotionExtractorComponent;
 
     @PostMapping("/result")
-    public ExtractedData getSomething(@RequestHeader(value = "restaurantID", required = true) String restaurantID) {
+    public ExtractedData extractDataFromRestaurantId(@RequestHeader(value = "restaurantID", required = true) String restaurantID) {
 
         ExtractedData extractedData = new ExtractedData();
         BizDetailsPageProps bizDetailsPageProps = reviewHighLightsComponent.getReviewHighLights(restaurantID);
