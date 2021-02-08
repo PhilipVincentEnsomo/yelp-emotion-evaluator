@@ -32,7 +32,7 @@ public class RestaurantAnalyzerController {
         BizDetailsPageProps bizDetailsPageProps = reviewHighLightsComponent.getReviewHighLights(restaurantID);
         List<EmotionAnalyzerResult> emotionAnalyzerResultList = emotionExtractorComponent.extractEmotionDetails(bizDetailsPageProps);
 
-        extractedData.setBizDetailsPageProps(bizDetailsPageProps);
+        extractedData.setReviews(bizDetailsPageProps.getReviewFeedQueryProps().getReviews());
         extractedData.setEmotionAnalyzerResultList(emotionAnalyzerResultList);
 
         return extractedData;
